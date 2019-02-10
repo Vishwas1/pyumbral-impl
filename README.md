@@ -1,2 +1,0 @@
-# pyumbral-impl
-pyUmbral implementation
