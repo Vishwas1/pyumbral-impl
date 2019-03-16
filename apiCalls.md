@@ -1,8 +1,11 @@
-First run **Ursula**
+## Run Ursula
 
-`nucypher ursula run --dev --federated-only`
+```
+nucypher ursula run --dev --federated-only
+```
+It will run at http://localhost:10151
 
-Now run **Alice**
+## Run Alice
 
 ```
 nucypher alice run --dev --federated-only --teacher-uri localhost:10151
@@ -13,6 +16,22 @@ Output
 Alice Verifying Key 0273bec9cece8f59c16cac08790bae37a4ae0081b6330159508a35b188e9625455
 ```
 It will run at http://localhost:8151
+
+## Run Bob
+
+```
+nucypher bob run --dev --federated-only --teacher-uri localhost:10151
+```
+Output
+
+```
+Bob Verifying Key 025ac3baac9514e9f73d9e436301030247ec9020f8a5813f407f4142237ed12d33
+Bob Encrypting Key 0236f4ef62816bfa571a3278c0641cc97bd611cdcb14ed021ca00d9137acf12ccf
+```
+It will run at http://localhost:11151
+
+
+-----------------------------------------------------------------------------------------------------
 
 Alice derives public key for the policy: _nucypherHackathon_
 
@@ -57,19 +76,6 @@ Body : {
 ```
 {"result": {"message_kit": "A5Yb8RAvSnZZdnNu9d6p+rdWIaHLPOssZJO/90damVCCA370M749AcJ6qEtk1u0oZOX7MLTeg01yAqsLaznF0nsWt8FnQWrUWScHNg6S/gIv6iVU0pDWNjaJTeAL7KGa8zgDUaUYwQ0itRhNZaMUZIOHpO2lVuAV1uhn8MVezECC1twWw3ce1Q4GDiCRWHVFI8uq28P1Z27FveVKwTUmRA0p32qlcu1U5+8qCpbcF1aK4C7fY9dG0yMrm+LDRFzW8tDWAgPDWNG2BDd6vFEs1b0DoXQSYET6RbeLkPZJiHW+vo+hPWSiDQru+c692UWxbhHmHAz7FsG40csSCkszUHer", "signature": "Jf+oZYXyWfi0QnwExZ9Sv93Iq5i3GMYw4XdermqEthLSLRECwf1fKseTIyien/HazPBxA9cM0HgEJipu9WKaVA=="}, "version": "0.1.0-alpha.18"}
 ```
-
-Now run **Bob**
-
-```
-nucypher bob run --dev --federated-only --teacher-uri localhost:10151
-```
-Output
-
-```
-Bob Verifying Key 025ac3baac9514e9f73d9e436301030247ec9020f8a5813f407f4142237ed12d33
-Bob Encrypting Key 0236f4ef62816bfa571a3278c0641cc97bd611cdcb14ed021ca00d9137acf12ccf
-```
-It will run at http://localhost:11151
 
 ## ============== ALICE GRANT ACCESS TO BOB  ========
 
