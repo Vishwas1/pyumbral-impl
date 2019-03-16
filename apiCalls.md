@@ -1,17 +1,46 @@
+First start with running Ursula 
+
+`nucypher ursula run --dev --federated-only`
+
+Now run **Alice**
+
+```
+nucypher alice run --dev --federated-only --teacher-uri localhost:10151
+```
+Output
+
+```
+Alice Verifying Key 0273bec9cece8f59c16cac08790bae37a4ae0081b6330159508a35b188e9625455
+```
+It will run at http://localhost:8151
+
+Alice derives public key for the policy: _nucypherHackathon_
+
+
 ## ============ ALICE CREATES A POLICY ========
 
 ### Request
 
 ```
-Url : http://localhost:8151/derive_policy_encrypting_key/policy1 
+Url : http://localhost:8151/derive_policy_encrypting_key/nucypherHackathon 
 Method : POST
 ```
 
 ### Response 
 
 ```
-{"result": {"policy_encrypting_key": "0263a5d072e60305ff06bafe366a8d770a53cb0ddace432b60e700a0319adf9212", "label": "policy1"}, "version": "0.1.0-alpha.18", "duration": "0:00:00"}
+{"result": {"policy_encrypting_key": "0263a5d072e60305ff06bafe366a8d770a53cb0ddace432b60e700a0319adf9212", "label": "nucypherHackathon"}, "version": "0.1.0-alpha.18", "duration": "0:00:00"}
 ```
+
+Now run **Enrico** for this policy.
+
+```
+nucypher enrico run --policy-encrypting-key 0263a5d072e60305ff06bafe366a8d770a53cb0ddace432b60e700a0319adf9212
+```
+
+It will run at http://localhost:5151
+
+
 ## ============ ENRICO ENCRYPTS THE MESSAGE ========
 
 ### Request
@@ -29,6 +58,19 @@ Body : {
 {"result": {"message_kit": "A5Yb8RAvSnZZdnNu9d6p+rdWIaHLPOssZJO/90damVCCA370M749AcJ6qEtk1u0oZOX7MLTeg01yAqsLaznF0nsWt8FnQWrUWScHNg6S/gIv6iVU0pDWNjaJTeAL7KGa8zgDUaUYwQ0itRhNZaMUZIOHpO2lVuAV1uhn8MVezECC1twWw3ce1Q4GDiCRWHVFI8uq28P1Z27FveVKwTUmRA0p32qlcu1U5+8qCpbcF1aK4C7fY9dG0yMrm+LDRFzW8tDWAgPDWNG2BDd6vFEs1b0DoXQSYET6RbeLkPZJiHW+vo+hPWSiDQru+c692UWxbhHmHAz7FsG40csSCkszUHer", "signature": "Jf+oZYXyWfi0QnwExZ9Sv93Iq5i3GMYw4XdermqEthLSLRECwf1fKseTIyien/HazPBxA9cM0HgEJipu9WKaVA=="}, "version": "0.1.0-alpha.18"}
 ```
 
+Now run **Bob**
+
+```
+nucypher bob run --dev --federated-only --teacher-uri localhost:10151
+```
+Output
+
+```
+Bob Verifying Key 025ac3baac9514e9f73d9e436301030247ec9020f8a5813f407f4142237ed12d33
+Bob Encrypting Key 0236f4ef62816bfa571a3278c0641cc97bd611cdcb14ed021ca00d9137acf12ccf
+```
+It will run at http://localhost:11151
+
 ## ============== ALICE GRANT ACCESS TO BOB  ========
 
 ### Request
@@ -41,7 +83,7 @@ Body : {
   "bob_verifying_key": "025ac3baac9514e9f73d9e436301030247ec9020f8a5813f407f4142237ed12d33",
   "m": 1,
   "n": 1,
-  "label": "policy1",
+  "label": "nucypherHackathon",
   "expiration" : "2019-03-19T09:21:32.794695Z"
   }
 ```
