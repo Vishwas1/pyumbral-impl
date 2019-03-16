@@ -1,4 +1,4 @@
-## ============ ALICE CREATES A POLICY ==============================
+## ============ ALICE CREATES A POLICY ========
 
 ### Request
 
@@ -12,7 +12,7 @@ Method : POST
 ```
 {"result": {"policy_encrypting_key": "0263a5d072e60305ff06bafe366a8d770a53cb0ddace432b60e700a0319adf9212", "label": "policy1"}, "version": "0.1.0-alpha.18", "duration": "0:00:00"}
 ```
-## ============ ENRICO ENCRYPTS THE MESSAGE ===========================
+## ============ ENRICO ENCRYPTS THE MESSAGE ========
 
 ### Request
 
@@ -29,7 +29,7 @@ Body : {
 {"result": {"message_kit": "A5Yb8RAvSnZZdnNu9d6p+rdWIaHLPOssZJO/90damVCCA370M749AcJ6qEtk1u0oZOX7MLTeg01yAqsLaznF0nsWt8FnQWrUWScHNg6S/gIv6iVU0pDWNjaJTeAL7KGa8zgDUaUYwQ0itRhNZaMUZIOHpO2lVuAV1uhn8MVezECC1twWw3ce1Q4GDiCRWHVFI8uq28P1Z27FveVKwTUmRA0p32qlcu1U5+8qCpbcF1aK4C7fY9dG0yMrm+LDRFzW8tDWAgPDWNG2BDd6vFEs1b0DoXQSYET6RbeLkPZJiHW+vo+hPWSiDQru+c692UWxbhHmHAz7FsG40csSCkszUHer", "signature": "Jf+oZYXyWfi0QnwExZ9Sv93Iq5i3GMYw4XdermqEthLSLRECwf1fKseTIyien/HazPBxA9cM0HgEJipu9WKaVA=="}, "version": "0.1.0-alpha.18"}
 ```
 
-## ============== ALICE GRANT ACCESS TO BOB=======================================
+## ============== ALICE GRANT ACCESS TO BOB  ========
 
 ### Request
 
@@ -53,7 +53,7 @@ Response: {"result": {"treasure_map": "PXPuMgm0TUHGAh6OQ+C2gK+su0NAlif3L2uQvx8dk
 ```
 
 
-## ============== BOB RETRIVES THE MESSAGE =====================================
+## ============== BOB RETRIVES THE MESSAGE  ========
 
 ### Request
 
