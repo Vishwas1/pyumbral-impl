@@ -1,4 +1,4 @@
-First start with running Ursula 
+First run **Ursula**
 
 `nucypher ursula run --dev --federated-only`
 
